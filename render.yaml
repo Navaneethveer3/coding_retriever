@@ -9,5 +9,3 @@ services:
     envVars:
       - key: PORT
         value: 10000
-      - key: DATABASE_URL
-        value: sqlite:///backend/app.db
