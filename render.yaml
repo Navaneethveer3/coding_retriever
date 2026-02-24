@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: coding-retriever
+    env: docker
+    plan: free
+    region: oregon
+    dockerContext: .
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: DATABASE_URL
+        value: sqlite:////opt/render/project/data/app.db
+    disk:
+      name: coding-data
+      mountPath: /opt/render/project/data
+      sizeGB: 1
